@@ -1,4 +1,4 @@
-package br.com.hotel.modelo;
+package br.com.hotel.hospedes;
 
 public class Hospede {
     private String nome;

@@ -1,4 +1,7 @@
-import br.com.hotel.modelo.*;
+package br.com.hotel.controle;
+
+import br.com.hotel.hospedes.Hospede;
+
 import java.util.ArrayList;
 
 public class Controle {

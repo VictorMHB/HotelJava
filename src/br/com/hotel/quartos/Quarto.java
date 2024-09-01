@@ -1,4 +1,4 @@
-package br.com.hotel.modelo;
+package br.com.hotel.quartos;
 
 public abstract class Quarto {
     private int numero;
@@ -10,6 +10,8 @@ public abstract class Quarto {
         this.precoDiaria = 100;
         this.disponibilidade = true;
     }
+
+    public abstract double calcularValorTotal(int dias);
 
     public int getNumero() {
         return numero;

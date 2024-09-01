@@ -1,4 +1,4 @@
-package br.com.hotel.modelo;
+package br.com.hotel.quartos;
 
 public class QuartoLuxo extends Quarto{
     public QuartoLuxo(int numero) {
@@ -6,7 +6,13 @@ public class QuartoLuxo extends Quarto{
     }
 
     @Override
+    public double calcularValorTotal(int dias) {
+        return getPrecoDiaria() * dias;
+    }
+
+    @Override
     public double getPrecoDiaria() {
         return super.getPrecoDiaria() * 2;
     }
+
 }

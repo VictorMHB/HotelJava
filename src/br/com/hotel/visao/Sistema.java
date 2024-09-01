@@ -1,4 +1,4 @@
-import br.com.hotel.modelo.Hospede;
+package br.com.hotel.visao;
 
 import java.util.Scanner;
 
