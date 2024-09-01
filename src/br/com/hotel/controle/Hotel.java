@@ -38,12 +38,10 @@ public class Hotel {
     }
 
     public String listarQuartosDisponiveis() {
-        Quarto quartoAux;
         String saida = "LISTA DOS QUARTOS QUE ESTÃO DISPONÍVEIS PARA HOSPEDAGEM:" +
                 "\n---------------\n";
 
-        for (int i = 0; i < listaQuartos.size(); i++) {
-            quartoAux = listaQuartos.get(i);
+        for (Quarto quartoAux : listaQuartos) {
             if (quartoAux.isDisponibilidade()){
                 saida += "Número do Quarto: " + quartoAux.getNumero() + "\n";
                 saida += "Tipo do Quarto: " + quartoAux.getClass().getSimpleName() + "\n";
@@ -51,23 +49,20 @@ public class Hotel {
                 saida += "---------------\n";
             }
         }
-
         return saida;
     }
 
     public String buscarQuarto(int numero) {
-        Quarto quartoAux;
         String saida = "O quarto com o número " + numero +  " foi encontrado:\n";
 
-        for (int i = 0; i < listaQuartos.size(); i++) {
-            quartoAux = listaQuartos.get(i);
+        for (Quarto quartoAux : listaQuartos) {
             if (quartoAux.getNumero() == numero) {
                 saida += "Disponibilidade: " + quartoAux.isDisponibilidade() + "\n";
                 saida += "Preço da Diária: " + quartoAux.getPrecoDiaria() + "\n";
                 saida += "Tipo do Quarto: " + quartoAux.getClass().getSimpleName();
             }
         }
-
         return saida;
     }
+
 }

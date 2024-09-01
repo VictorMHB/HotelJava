@@ -1,17 +1,30 @@
 package br.com.hotel.visao;
 
+import br.com.hotel.controle.Controle;
+import br.com.hotel.controle.Hotel;
+
 import java.util.Scanner;
 
-public class Sistema {
+public class Principal {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
+        Controle controle = new Controle();
+        Hotel hotel = new Hotel();
 
         int opcao = 0;
 
-        System.out.println("Selecione uma opção:");
-        System.out.println("Fazer cadastro:");
-        System.out.println("Fazer check-in:");
-        System.out.println("Fazer check-out:");
+        System.out.println("SELECIONE UMA OPÇÃO:");
+        System.out.println("1 - Realizar cadastro de um Hospede");
+        System.out.println("2 - Listar Todos os Hospedes Cadastrados");
+        System.out.println("3 - Realizar Check-In");
+        System.out.println("4 - Realizar Check-Out");
+        System.out.println("------------------------------");
+        System.out.println("5 - Adicionar um Quarto");
+        System.out.println("6 - Remover um Quarto");
+        System.out.println("7 - Buscar Quarto pelo Número");
+        System.out.println("8 - Listar Quartos Disponíveis");
+        System.out.println("------------------------------");
+        System.out.println("9 - Finalizar Sistema");
         opcao = teclado.nextInt();
         teclado.nextLine();
 

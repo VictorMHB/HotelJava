@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class TesteQuarto {
     public static void main(String[] args) {
-        int numero;
+        int numero = 301;
 
         Scanner sc = new Scanner(System.in);
         Hotel hotel = new Hotel();
@@ -20,5 +20,7 @@ public class TesteQuarto {
         hotel.removerQuarto(101);
 
         System.out.println(hotel.listarQuartosDisponiveis());
+
+        System.out.println(hotel.buscarQuarto(numero));
     }
 }
