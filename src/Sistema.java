@@ -18,22 +18,22 @@ public class Sistema {
         try {
             switch (opcao) {
                 case 1:
-                Hospede hospede = new Hospede();
+                //Hospede hospede = new Hospede();
                     System.out.print("Digite o seu nome: ");
                     String nome = teclado.nextLine();
-                    hospede.setNome(nome);
+                    //hospede.setNome(nome);
 
                     System.out.println("Digite o seu CPF: ");
                     String cpf = teclado.nextLine();
-                    hospede.setCpf(cpf);
+                    //hospede.setCpf(cpf);
 
                     System.out.println("Digite o seu telefone: ");
                     String telefone = teclado.nextLine();
-                    hospede.setTelefone(telefone);
+                    //hospede.setTelefone(telefone);
 
                     System.out.println("Digite o seu e-mail: ");
                     String email = teclado.nextLine();
-                    hospede.setEmail(email);
+                    //hospede.setEmail(email);
                 break;
                 case 2:
 
