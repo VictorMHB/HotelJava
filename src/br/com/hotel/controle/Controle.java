@@ -17,7 +17,7 @@ public class Controle {
     }
 
     public String listarHospede() {
-        String saida = "Lista dos hóspedes que estão cadastrados:\n";
+        String saida = "LISTA DE TODOS OS HÓSPEDES CADASTRADOS:\n";
 
         for (Hospede hospedeAux : listaHospedes) {
             saida += "CPF: " + hospedeAux.getCpf() + "\n";

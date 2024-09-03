@@ -42,7 +42,7 @@ public class Hotel {
                 "\n---------------\n";
 
         for (Quarto quartoAux : listaQuartos) {
-            if (quartoAux.isDisponibilidade()){
+            if (quartoAux.isDisponivel()){
                 saida += "Número do Quarto: " + quartoAux.getNumero() + "\n";
                 saida += "Tipo do Quarto: " + quartoAux.getClass().getSimpleName() + "\n";
                 saida += "Preço da Diária: " + quartoAux.getPrecoDiaria() + "\n";
@@ -57,12 +57,44 @@ public class Hotel {
 
         for (Quarto quartoAux : listaQuartos) {
             if (quartoAux.getNumero() == numero) {
-                saida += "Disponibilidade: " + quartoAux.isDisponibilidade() + "\n";
+                saida += "Disponibilidade: " + quartoAux.isDisponivel() + "\n";
                 saida += "Preço da Diária: " + quartoAux.getPrecoDiaria() + "\n";
-                saida += "Tipo do Quarto: " + quartoAux.getClass().getSimpleName();
+                saida += "Tipo do Quarto: " + quartoAux.getClass().getSimpleName() + "\n";
             }
         }
         return saida;
+    }
+
+    public void realizarCheckIn(int numero, int dias){
+        for(Quarto quartoAux : listaQuartos){
+            if (quartoAux.getNumero() == numero) {
+                if (quartoAux.isDisponivel()){
+                    quartoAux.setDisponibilidade(false);
+                    System.out.println("Check-in realizado com sucesso para o quarto de número " + numero);
+                    System.out.println("O valor total que será pago é de " + quartoAux.calcularValorTotal(dias) + "\n");
+                } else {
+                    System.out.println("O quarto solicitado para Check-in já está ocupado");
+                }
+            }
+        }
+    }
+
+    public double realizarCheckOut(int numero, int dias){
+        double valorTotal = 0.0;
+
+        for(Quarto quartoAux : listaQuartos) {
+            if (quartoAux.getNumero() == numero) {
+                if (!quartoAux.isDisponivel()) {
+                    quartoAux.setDisponibilidade(true);
+                    valorTotal = quartoAux.calcularValorTotal(dias);
+                    System.out.println("Check-out realizado com sucesso para o quarto de número " + numero);
+                    System.out.println("O valor total a ser pago é de " + valorTotal);
+                } else {
+                    System.out.println("O quarto solicitado para Check-out não possui nenhum hóspede");
+                }
+            }
+        }
+        return valorTotal;
     }
 
 }

@@ -29,7 +29,7 @@ public abstract class Quarto {
         this.precoDiaria = precoDiaria;
     }
 
-    public boolean isDisponibilidade() {
+    public boolean isDisponivel() {
         return disponibilidade;
     }
 
