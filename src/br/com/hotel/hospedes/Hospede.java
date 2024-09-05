@@ -7,10 +7,10 @@ public class Hospede {
     private String telefone;
 
     public Hospede(String nome, String cpf, String email, String telefone) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.telefone = telefone;
+        setNome(nome);
+        setCpf(cpf);
+        setEmail(email);
+        setTelefone(telefone);
     }
 
     public String getNome() {
@@ -18,6 +18,9 @@ public class Hospede {
     }
 
     public void setNome(String nome) {
+        if (nome == null || nome.trim().isEmpty()){
+            throw new IllegalArgumentException("O nome não pode estar vazio");
+        }
         this.nome = nome;
     }
 
@@ -26,7 +29,10 @@ public class Hospede {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        if (cpf == null || !cpf.matches("[0-9]+")){
+            throw new IllegalArgumentException("O CPF deve conter apenas números");
+        }
+            this.cpf = cpf;
     }
 
     public String getEmail() {
@@ -34,6 +40,9 @@ public class Hospede {
     }
 
     public void setEmail(String email) {
+        if (email == null || email.trim().isEmpty()){
+            throw new IllegalArgumentException("O e-mail não pode estar vazio");
+        }
         this.email = email;
     }
 
@@ -42,6 +51,9 @@ public class Hospede {
     }
 
     public void setTelefone(String telefone) {
+        if (telefone == null || !telefone.matches("[0-9]+")){
+            throw new IllegalArgumentException("O número de telefone deve conter apenas números");
+        }
         this.telefone = telefone;
     }
 }

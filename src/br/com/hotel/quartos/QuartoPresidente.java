@@ -12,7 +12,7 @@ public class QuartoPresidente extends Quarto{
 
     @Override
     public double getPrecoDiaria() {
-        return super.getPrecoDiaria() * 4;
+        return super.getPrecoDiaria() * 5;
     }
 
 }

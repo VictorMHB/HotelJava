@@ -39,19 +39,23 @@ public class Principal {
 
                 switch (opcao) {
                     case 1:
-                        System.out.print("Digite o seu nome: ");
-                        nome = teclado.nextLine();
+                        try {
+                            System.out.print("Digite o seu nome: ");
+                            nome = teclado.nextLine();
 
-                        System.out.println("Digite o seu CPF: ");
-                        cpf = teclado.nextLine();
+                            System.out.println("Digite o seu CPF: ");
+                            cpf = teclado.nextLine();
 
-                        System.out.println("Digite o seu telefone: ");
-                        telefone = teclado.nextLine();
+                            System.out.println("Digite o seu telefone: ");
+                            telefone = teclado.nextLine();
 
-                        System.out.println("Digite o seu e-mail: ");
-                        email = teclado.nextLine();
+                            System.out.println("Digite o seu e-mail: ");
+                            email = teclado.nextLine();
 
-                        controle.cadastrarHospede(nome, cpf, email, telefone);
+                            controle.cadastrarHospede(nome, cpf, email, telefone);
+                        } catch (IllegalArgumentException e){
+                            System.out.println("Erro: " + e.getMessage());
+                        }
                         break;
 
                     case 2:
@@ -92,27 +96,42 @@ public class Principal {
                         break;
 
                     case 5:
-                        System.out.println("Insira o tipo do quarto (Simples, Luxo ou Presidente):");
-                        tipoQuarto = teclado.nextLine();
+                        try {
+                            System.out.println("Insira o tipo do quarto (Simples, Luxo ou Presidente):");
+                            tipoQuarto = teclado.nextLine();
 
-                        System.out.println("Insira o número do quarto:");
-                        numero = teclado.nextInt();
+                            System.out.println("Insira o número do quarto:");
+                            numero = teclado.nextInt();
 
-                        hotel.adicionarQuarto(tipoQuarto, numero);
+                            hotel.adicionarQuarto(tipoQuarto, numero);
+                        } catch (InputMismatchException e){
+                            System.out.println("Erro: o número do quarto precisa ser uma valor numérico.");
+                            teclado.nextLine();
+                        }
                         break;
 
                     case 6:
-                        System.out.println("Insira o número do quarto que deseja remover:");
-                        numero = teclado.nextInt();
+                        try {
+                            System.out.println("Insira o número do quarto que deseja remover:");
+                            numero = teclado.nextInt();
 
-                        hotel.removerQuarto(numero);
+                            hotel.removerQuarto(numero);
+                        } catch (InputMismatchException e){
+                            System.out.println("Erro: o número do quarto precisa ser uma valor numérico.");
+                            teclado.nextLine();
+                        }
                         break;
 
                     case 7:
-                        System.out.println("Insira o número do quarto que deseja buscar:");
-                        numero = teclado.nextInt();
+                        try {
+                            System.out.println("Insira o número do quarto que deseja buscar:");
+                            numero = teclado.nextInt();
 
-                        System.out.println(hotel.buscarQuarto(numero));
+                            System.out.println(hotel.buscarQuarto(numero));
+                        } catch (InputMismatchException e){
+                            System.out.println("Erro: o número do quarto precisa ser uma valor numérico.");
+                            teclado.nextLine();
+                        }
                         break;
 
                     case 8:

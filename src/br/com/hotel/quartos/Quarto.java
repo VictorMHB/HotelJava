@@ -6,8 +6,8 @@ public abstract class Quarto {
     private boolean disponibilidade;
 
     public Quarto(int numero) {
-        this.numero = numero;
-        this.precoDiaria = 100;
+        setNumero(numero);
+        this.precoDiaria = 120;
         this.disponibilidade = true;
     }
 
@@ -18,6 +18,10 @@ public abstract class Quarto {
     }
 
     public void setNumero(int numero) {
+        if (numero <= 0){
+            throw new IllegalArgumentException("O número do quarto não pode ser negativo");
+        }
+
         this.numero = numero;
     }
 

@@ -15,14 +15,18 @@ public class Hotel {
     }
 
     public void adicionarQuarto(String tipoQuarto, int numero) {
-        if (tipoQuarto.equalsIgnoreCase("Simples")){
-            listaQuartos.add(new QuartoSimples(numero));
-        } else if (tipoQuarto.equalsIgnoreCase("Luxo")) {
-            listaQuartos.add(new QuartoLuxo(numero));
-        } else if (tipoQuarto.equalsIgnoreCase("Presidente")) {
-            listaQuartos.add(new QuartoPresidente(numero));
-        } else {
-            System.out.println("O tipo de quarto inserido não existe, tente novamente");
+        try {
+            if (tipoQuarto.equalsIgnoreCase("Simples")) {
+                listaQuartos.add(new QuartoSimples(numero));
+            } else if (tipoQuarto.equalsIgnoreCase("Luxo")) {
+                listaQuartos.add(new QuartoLuxo(numero));
+            } else if (tipoQuarto.equalsIgnoreCase("Presidente")) {
+                listaQuartos.add(new QuartoPresidente(numero));
+            } else {
+                System.out.println("O tipo de quarto inserido não existe, tente novamente");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao adicionar o quarto: " + e.getMessage());
         }
     }
 
